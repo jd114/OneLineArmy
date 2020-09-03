@@ -1,6 +1,17 @@
 # OneLineArmy
 We call it as one line but it has a couple of lines....don't Think me bad ;)
 
+### Disclimer
+Tools I've used here :
+- Httpx
+- Assetfinder
+- Subfinder
+- Amass
+- Gau
+- Waybackurls
+- Linkfinder
+- Secretfinder
+
 ### Grab all the subdoamins with this
 ```
 subsof(){
