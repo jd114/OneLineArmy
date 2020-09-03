@@ -1,7 +1,7 @@
 # OneLineArmy
 We call it as one line but it has a couple of lines....don't Think me bad ;)
 
-### Disclimer
+### Before we start !
 Tools I've used here :
 - Httpx
 - Assetfinder
