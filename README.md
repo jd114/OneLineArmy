@@ -12,6 +12,8 @@ Tools I've used here :
 - Linkfinder
 - Secretfinder
 
+## Paste these in your .bashrc file
+
 ### Grab all the subdoamins with this
 ```
 subsof(){
@@ -26,14 +28,14 @@ subsof(){
 }
 ```
 
-### get js files with the output of gau or waybackurls or something else
+### Get js files with the output of gau or waybackurls or something else
 ```
 getjs(){
         cat $1 | grep '\.js$' | httpx -status-code -mc 200 -content-type -no-color -silent | grep 'application/javascript' | sed -e 's/\[application\/javascript]//g' | sed 's/\[200]//g' | tee -a js.txt
 }
 ```
 
-### Grab all urls and get those unique and valid
+### Grab all urls and get those unique and valid with Gau , Waybacurls and httpx
 ```
 grab_url(){
           echo $1 | gau -subs >> gau.txt;cat gau.txt | sort -u | httpx -silent >> alivegau.txt;
