@@ -15,7 +15,7 @@ subsof(){
         amass enum -nf sub.txt -d $1 -noalts -passive >> amass.txt;
         cat subs.txt amass.txt | sort -u >> subs.txt;
         rm -rf amass.txt sub.txt;
-        cat subs.txt | httprobe -silent | sed 's/https\?:\/\///' >> alive-subs.txt
+        cat subs.txt | httpx -silent | sed 's/https\?:\/\///' >> alive-subs.txt
 }
 
 #Grab all urls and get those unique and valid
