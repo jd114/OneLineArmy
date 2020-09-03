@@ -15,6 +15,8 @@ Tools I've used here :
 ## Paste these in your .bashrc file
 
 ### Grab all the subdoamins with this
+
+Useage : subsof domain
 ```
 subsof(){
         echo $1 | assetfinder -subs-only | sort -u >> asub.txt;
@@ -29,13 +31,19 @@ subsof(){
 ```
 
 ### Get js files with the output of gau or waybackurls or something else
+
+Useage : getjs allurls.txt
+
 ```
 getjs(){
         cat $1 | grep '\.js$' | httpx -status-code -mc 200 -content-type -no-color -silent | grep 'application/javascript' | sed -e 's/\[application\/javascript]//g' | sed 's/\[200]//g' | tee -a js.txt
 }
 ```
 
-### Grab all urls and get those unique and valid with Gau , Waybacurls and httpx
+### Grab all Urls and Endpoints with Gau , Waybacurls and httpx
+
+Useage : grab_url domain
+
 ```
 grab_url(){
           echo $1 | gau -subs >> gau.txt;cat gau.txt | sort -u | httpx -silent >> alivegau.txt;
@@ -45,6 +53,9 @@ grab_url(){
 ```
 ### Give your js files as input here to get urls and juicy contents 
  #### Nothing fancy...Just,merging 2 tools
+
+Useage : jsfun doamin/*.js
+
 ```
 jsfun(){
         mkdir -p js;
