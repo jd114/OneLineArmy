@@ -22,13 +22,14 @@ subsof(){
 
 grab_url(){
           echo $1 | gau -subs >> gau.txt;cat gau.txt | sort -u | httpx -silent >> alivegau.txt;
-          echo $1 | waybackurls >> waybacks.txt;cat waybacks.txt | sort -u | httpx -silent >> alivewaybacks.txt;cat alivegau.txt alivewaybacks.txt | sort -u >> allalive.txt
+          echo $1 | waybackurls >> waybacks.txt;
+          cat waybacks.txt | sort -u | httpx -silent >> alivewaybacks.txt;cat alivegau.txt alivewaybacks.txt | sort -u >> allalive.txt
 }
 
 # Give your js files as input here to get urls and juicy contents 
  # Nothing fancy...useage eg: jsfun <domain>/sesitive.js
 
-jfun(){
+jsfun(){
         mkdir -p js;
         cat $1 | while read url; do linkfinder -d -i $url -o cli;done >> js/linkfinder.txt;
         cat $1 | while read url; do secretfinder -i $url -o cli;done >> js/secrets.txt;
