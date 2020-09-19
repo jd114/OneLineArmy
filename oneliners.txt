@@ -34,3 +34,11 @@ jsfun(){
         cat $1 | while read url; do linkfinder -d -i $url -o cli;done >> js/linkfinder.txt;
         cat $1 | while read url; do secretfinder -i $url -o cli;done >> js/secrets.txt;
 }
+
+# OTX
+# Edited from https://github.com/Virdoexhunter/OneLinerBashrcCommand
+
+otx()
+{
+    gron "https://otx.alienvault.com/otxapi/indicator/hostname/url_list/$1?limit=100&page=1" | grep "\burl\b" | gron --ungron | jq | grep http | tr -d '"' | tr -d 'url:';
+}
