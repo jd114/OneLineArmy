@@ -51,6 +51,19 @@ grab_url(){
           cat alivegau.txt alivewaybacks.txt | sort -u >> allalive.txt
 }
 ```
+### Grab urls and Seek for Sensitive Info. from OTX
+
+Useage: otx domain.site
+
+Thanks [@Virdoex_hunter](https://twitter.com/Virdoex_hunter)
+
+```
+otx()
+{
+    gron "https://otx.alienvault.com/otxapi/indicator/hostname/url_list/$1?limit=100&page=1" | grep "\burl\b" | gron --ungron | jq | grep http | tr -d '"' | tr -d 'url:' | tee -a otx.txt;
+}
+```
+
 ### Give your js files as input here to get urls and juicy contents 
  #### Nothing fancy...Just,merging 2 tools
 
