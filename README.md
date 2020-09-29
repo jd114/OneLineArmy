@@ -9,6 +9,7 @@ Tools I've used here :
 - Amass
 - Gau
 - Waybackurls
+- anti-burl
 - Linkfinder
 - Secretfinder
 
@@ -46,9 +47,9 @@ Useage : grab_url domain
 
 ```
 grab_url(){
-          echo $1 | gau -subs >> gau.txt;cat gau.txt | sort -u | httpx -silent >> alivegau.txt;
-          echo $1 | waybackurls >> waybacks.txt;cat waybacks.txt | sort -u | httpx -silent >> alivewaybacks.txt;
-          cat alivegau.txt alivewaybacks.txt | sort -u >> allalive.txt
+          echo $1 | gau -subs | sort -u | anti-burl | tee -a gau.txt
+          echo $1 | waybackurls| sort -u | anti-burl | tee -a waybacks.txt;
+          cat gau.txt waybacks.txt | sort -u |allurls.txt
 }
 ```
 ### Grab urls and Seek for Sensitive Info. from OTX
