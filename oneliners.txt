@@ -26,6 +26,10 @@ grab_url(){
           cat waybacks.txt | sort -u | httpx -silent >> alivewaybacks.txt;cat alivegau.txt alivewaybacks.txt | sort -u >> allalive.txt
 }
 
+# Alias for Dirsearch
+
+alias dirsearch="python3 /path/to/dirsearch/dirsearch.py -x 301,302,304,400,401,404,500 -e php,sql,html,js,json,asp,aspx,pl,zip,txt,tar,jsp,swf,log,rar"
+
 # Give your js files as input here to get urls and juicy contents 
  # Nothing fancy...useage eg: jsfun <domain>/sesitive.js
 
