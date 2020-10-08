@@ -41,6 +41,13 @@ getjs(){
 }
 ```
 
+### Dirsearch Alias
+
+Useage : dirsearch -u evil.com
+```
+alias dirsearch="python3 /path/to/dirsearch/dirsearch.py -x 301,302,304,400,401,404,500 -e php,sql,html,js,json,asp,aspx,pl,zip,txt,tar,jsp,swf,log,rar"
+```
+
 ### Grab all Urls and Endpoints with Gau , Waybacurls and httpx
 
 Useage : grab_url domain
