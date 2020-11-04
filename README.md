@@ -54,8 +54,8 @@ Useage : grab_url domain
 
 ```
 grab_url(){
-          echo $1 | gau -subs | sort -u | anti-burl | tee -a gau.txt
-          echo $1 | waybackurls| sort -u | anti-burl | tee -a waybacks.txt;
+          echo $1 | gau -subs | sort -u | tee -a gau.txt
+          echo $1 | waybackurls| sort -u | tee -a waybacks.txt;
           cat gau.txt waybacks.txt | sort -u |allurls.txt
 }
 ```
