@@ -40,7 +40,10 @@ getjs(){
         cat $1 | grep '\.js$' | httpx -status-code -mc 200 -content-type -no-color -silent | grep 'application/javascript' | sed -e 's/\[application\/javascript]//g' | sed 's/\[200]//g' | tee -a js.txt
 }
 ```
-
+### OpenRedirect Oneliner :)
+```
+waybackurls YOUR_TARGET | sort -u | qsreplace https://google.com > redirffuf.txt; ffuf -u FUZZ -w redirffuf.txt -mr google.com
+```
 ### Dirsearch Alias
 
 Useage : dirsearch -u evil.com
