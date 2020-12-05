@@ -88,3 +88,13 @@ jsfun(){
         cat $1 | while read url; do secretfinder -i $url -o cli;done >> js/secrets.txt;
 }
   ```
+
+### Subdomain Bruteforcer With FFUF
+
+Usage : ffufr WORDLISTNAME.txt DOMAIN.com
+
+```bash
+ffufr() {
+  ffuf -c -w "/path/to/SecLists/Discovery/Web-Content/$1" -u "$2/FUZZ" -recursion
+}
+  ```
