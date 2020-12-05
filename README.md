@@ -98,3 +98,4 @@ ffufr() {
   ffuf -c -w "/path/to/SecLists/Discovery/Web-Content/$1" -u "$2/FUZZ" -recursion
 }
   ```
+## Done 
